@@ -15,7 +15,11 @@
       if(keyState[e.keyCode] == "up") {
         keyState[e.keyCode] = "down";
         var methodToCall = methodMap[e.keyCode];
-        if(methodToCall) methods[methodToCall]();
+        if(methodToCall) {
+          if (methodToCall == "up")
+            app.notification.playNextJumpSound();
+          methods[methodToCall]();
+        }
       }
     });
 
