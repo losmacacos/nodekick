@@ -75,6 +75,7 @@
 
       if(player.state == "dying" && !this.dead) {
         this.dead = true;
+        _.sample(app.notification.sounds.death).play({ volume: 30 });
         app.deathAnimations.queue(
           playerTexture(this.id),
           this.sprite.position.x,
