@@ -55,11 +55,11 @@ Open the app (same as opening it in the browser):
 
 And your app should be up on Heroku.
 
-#Deploy to Infrastructure as a Service
+# Deploy to Infrastructure as a Service
 
 The deployment instructions thus far have been about deploying to PaaS. You can spin up your own linux box and deploy Nodekick (or any other NodeJS app for that matter). This is of course a bit harder, but you'll have fine grained control over your box as opposed to being constrained to what PaaS provides.
 
-##Signing up and deploying to Amazon EC2
+## Signing up and deploying to Amazon EC2
 
 Sign up for Amazon AWS at http://aws.amazon.com/
 
