@@ -37,6 +37,10 @@
     socket.emit("sendchat", { session: session(), message: message });
   }
 
+  function updateScore() {
+    socket.emit("updateScore", { session: session() })
+  }
+
   function getPlayer(playerId) {
     return _.findWhere(gameState.players, { id: playerId });
   }
@@ -68,6 +72,10 @@
       app.game.chatReceived(args.name, args.message);
     });
 
+    socket.on('score', scores => {
+      app.game.scoresReceived(scores);
+    });
+
     socket.on('achievement', function(args) {
       app.game.achievementsReceived(args);
     });
@@ -96,6 +104,7 @@
   app.game.left = left;
   app.game.right = right;
   app.game.sendChat = sendChat;
+  app.game.updateScore = updateScore;
   app.game.getPlayer = getPlayer;
   app.game.clock = function() { return clock; };
   app.game.players = function() { return gameState.players; };

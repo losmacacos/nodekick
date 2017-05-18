@@ -144,6 +144,22 @@ function processAchievements({id}, {deaths}) {
   emit(id, 'achievement', achievementsThisTick);
 }
 
+function processScore({id}) {
+  const players = getGame(id).getPlayers();
+  let scores = players.map(player => {
+    return {
+      name: player.name,
+      kills: player.kills,
+      headshots: player.headshots
+    };
+  });
+  scores.sort((a, b) => {
+    return a.kills - b.kills;
+  })
+
+  emit(id, 'score', scores);
+}
+
 const framesPerSecondInMilliseconds = 1000.0 / engine.fps;
 let syncRate = 0;
 
@@ -168,6 +184,7 @@ setInterval(() => {
 
     broadcast(game);
 
+    processScore(game)
     processAchievements(game, tickResult);
   }
 }, framesPerSecondInMilliseconds);
