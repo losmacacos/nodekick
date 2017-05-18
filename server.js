@@ -145,7 +145,7 @@ function processAchievements({id}, {deaths}) {
 }
 
 function processScore({id}) {
-  const players = getGame(id).getPlayers();
+  const players = getGame(id).players;
   let scores = players.map(player => {
     return {
       name: player.name,
