@@ -155,7 +155,7 @@ function processScore({id}) {
   });
   scores.sort((a, b) => {
     return a.kills - b.kills;
-  })
+  });
 
   emit(id, 'score', scores);
 }
@@ -184,7 +184,7 @@ setInterval(() => {
 
     broadcast(game);
 
-    processScore(game)
+    processScore(game);
     processAchievements(game, tickResult);
   }
 }, framesPerSecondInMilliseconds);
