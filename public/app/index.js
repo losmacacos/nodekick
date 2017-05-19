@@ -16,6 +16,7 @@
     app.playerSprites.init();
     app.ai.init();
     app.chat.init();
+    app.scoreboard.init();
     app.drawer.startDrawing();
     initPingStatistic();
     setInterval(emitPing, 500);

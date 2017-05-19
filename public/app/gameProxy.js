@@ -68,6 +68,10 @@
       app.game.chatReceived(args.name, args.message);
     });
 
+    socket.on('score', scores => {
+      app.game.scoresReceived(scores);
+    });
+
     socket.on('achievement', function(args) {
       app.game.achievementsReceived(args);
     });

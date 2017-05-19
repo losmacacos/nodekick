@@ -25,6 +25,17 @@
   padding: 5px;
 }
 
+#scoreboard {
+  font-family: Arial;
+  float: right;
+  width: 50%;
+}
+
+.score {
+  font-family: Impact;
+  color: grey;
+}
+
 #instructions {
   font-family: Arial;
   float: right;
